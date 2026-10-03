@@ -1,0 +1,340 @@
+[
+ {
+  "id": "sud",
+  "name": "Hossegor Sud",
+  "lat": 43.66,
+  "lon": -1.44613,
+  "facing": 284,
+  "ref": {
+   "lat": 43.66055,
+   "lon": -1.44914,
+   "depth": 13.7
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "grav",
+  "name": "La Gravière",
+  "lat": 43.672,
+  "lon": -1.44297,
+  "facing": 275,
+  "ref": {
+   "lat": 43.67239,
+   "lon": -1.44979,
+   "depth": 12.6
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "piste",
+  "name": "La Piste",
+  "lat": 43.648,
+  "lon": -1.44697,
+  "facing": 279,
+  "ref": {
+   "lat": 43.6491,
+   "lon": -1.45648,
+   "depth": 12.2
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "bourd",
+  "name": "Les Bourdaines",
+  "lat": 43.703,
+  "lon": -1.43895,
+  "facing": 279,
+  "ref": {
+   "lat": 43.70419,
+   "lon": -1.4494,
+   "depth": 12.1
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "penon",
+  "name": "Le Penon",
+  "lat": 43.713,
+  "lon": -1.43692,
+  "facing": 281,
+  "ref": {
+   "lat": 43.71443,
+   "lon": -1.44731,
+   "depth": 12.0
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "vieux",
+  "name": "Vieux-Boucau",
+  "lat": 43.791,
+  "lon": -1.4142,
+  "facing": 281,
+  "ref": {
+   "lat": 43.79267,
+   "lon": -1.42612,
+   "depth": 12.2
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "moli",
+  "name": "Moliets",
+  "lat": 43.852,
+  "lon": -1.39492,
+  "facing": 287,
+  "ref": {
+   "lat": 43.8558,
+   "lon": -1.41222,
+   "depth": 12.3
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "cavs",
+  "name": "Les Cavaliers",
+  "lat": 43.517,
+  "lon": -1.5307,
+  "facing": 299,
+  "ref": {
+   "lat": 43.52004,
+   "lon": -1.5383,
+   "depth": 12.1
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "basq",
+  "name": "Côte des Basques",
+  "lat": 43.478,
+  "lon": -1.5673,
+  "facing": 276,
+  "ref": {
+   "lat": 43.47907,
+   "lon": -1.58148,
+   "depth": 12.2
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "hend",
+  "name": "Hendaye",
+  "lat": 43.37405,
+  "lon": -1.778,
+  "facing": 5,
+  "ref": {
+   "lat": 43.38426,
+   "lon": -1.78176,
+   "depth": 12.1
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "lac",
+  "name": "Lacanau Centrale",
+  "lat": 45.001,
+  "lon": -1.20598,
+  "facing": 273,
+  "ref": {
+   "lat": 45.00139,
+   "lon": -1.21582,
+   "depth": 12.1
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "carc",
+  "name": "Carcans-Plage",
+  "lat": 45.083,
+  "lon": -1.19815,
+  "facing": 272,
+  "ref": {
+   "lat": 45.08323,
+   "lon": -1.20738,
+   "depth": 12.2
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "mont",
+  "name": "Montalivet",
+  "lat": 45.378,
+  "lon": -1.16099,
+  "facing": 267,
+  "ref": {
+   "lat": 45.37736,
+   "lon": -1.18178,
+   "depth": 12.1
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "vert",
+  "name": "Vert Bois",
+  "lat": 45.89889,
+  "lon": -1.301,
+  "facing": 199,
+  "ref": {
+   "lat": 45.87548,
+   "lon": -1.31245,
+   "depth": 12.3
+  },
+  "grid": "R1141_CHARENTES-200M"
+ },
+ {
+  "id": "sauv",
+  "name": "La Côte Sauvage",
+  "lat": 45.69825,
+  "lon": -1.237,
+  "facing": 263,
+  "ref": {
+   "lat": 45.69233,
+   "lon": -1.3112,
+   "depth": 12.0
+  },
+  "grid": "R1142_AQUITAINE-200M"
+ },
+ {
+  "id": "sauz",
+  "name": "La Sauzaie",
+  "lat": 46.63211,
+  "lon": -1.887,
+  "facing": 220,
+  "ref": {
+   "lat": 46.62246,
+   "lon": -1.89878,
+   "depth": 12.3
+  },
+  "grid": "R1141_CHARENTES-200M"
+ },
+ {
+  "id": "dunes",
+  "name": "Les Dunes",
+  "lat": 46.613,
+  "lon": -1.86281,
+  "facing": 224,
+  "ref": {
+   "lat": 46.5999,
+   "lon": -1.88122,
+   "depth": 12.0
+  },
+  "grid": "R1141_CHARENTES-200M"
+ },
+ {
+  "id": "conch",
+  "name": "Les Conches",
+  "lat": 46.40003,
+  "lon": -1.508,
+  "facing": 220,
+  "ref": {
+   "lat": 46.37731,
+   "lon": -1.53517,
+   "depth": 12.2
+  },
+  "grid": "R1141_CHARENTES-200M"
+ },
+ {
+  "id": "terr",
+  "name": "La Terrière",
+  "lat": 46.3426,
+  "lon": -1.432,
+  "facing": 150,
+  "ref": {
+   "lat": 46.33066,
+   "lon": -1.48081,
+   "depth": 12.1
+  },
+  "grid": "R1141_CHARENTES-200M"
+ },
+ {
+  "id": "sion",
+  "name": "Sion-sur-l’Océan",
+  "lat": 46.724,
+  "lon": -1.98815,
+  "facing": 229,
+  "ref": {
+   "lat": 46.71154,
+   "lon": -2.00929,
+   "depth": 12.0
+  },
+  "grid": "R1132_LOIRE-200M"
+ },
+ {
+  "id": "sabl",
+  "name": "Grande Plage",
+  "lat": 46.49183,
+  "lon": -1.778,
+  "facing": 207,
+  "ref": {
+   "lat": 46.48581,
+   "lon": -1.78242,
+   "depth": 12.1
+  },
+  "grid": "R1141_CHARENTES-200M"
+ },
+ {
+  "id": "gov",
+  "name": "La Govelle",
+  "lat": 47.27434,
+  "lon": -2.495,
+  "facing": 214,
+  "ref": {
+   "lat": 47.27266,
+   "lon": -2.49666,
+   "depth": 12.4
+  },
+  "grid": "R1132_LOIRE-200M"
+ },
+ {
+  "id": "penth",
+  "name": "Penthièvre",
+  "lat": 47.52303,
+  "lon": -3.155,
+  "facing": 237,
+  "ref": {
+   "lat": 47.52083,
+   "lon": -3.16004,
+   "depth": 12.4
+  },
+  "grid": "R1132_LOIRE-200M"
+ },
+ {
+  "id": "portb",
+  "name": "Port Blanc",
+  "lat": 47.489,
+  "lon": -3.14544,
+  "facing": 263,
+  "ref": {
+   "lat": 47.48887,
+   "lon": -3.1471,
+   "depth": 13.8
+  },
+  "grid": "R1132_LOIRE-200M"
+ },
+ {
+  "id": "torch",
+  "name": "La Torche",
+  "lat": 47.844,
+  "lon": -4.34824,
+  "facing": 269,
+  "ref": {
+   "lat": 47.84371,
+   "lon": -4.36599,
+   "depth": 12.1
+  },
+  "grid": "R1131_SUDBZH-200M"
+ },
+ {
+  "id": "pors",
+  "name": "Pors Carn",
+  "lat": 47.82717,
+  "lon": -4.359,
+  "facing": 342,
+  "ref": {
+   "lat": 47.82749,
+   "lon": -4.37004,
+   "depth": 13.4
+  },
+  "grid": "R1131_SUDBZH-200M"
+ }
+]
