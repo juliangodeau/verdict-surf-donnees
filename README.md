@@ -27,9 +27,11 @@ La méthode, les mesures et les sources sont détaillées dans l’étude du pro
 
 ## Précision connue
 
-- **Modèle côtier face aux bouées Candhis :** environ +6 % sur la hauteur de houle.
-- **Open-Meteo recalé face au modèle côtier**, sur des jours non utilisés pour le calage : la taille au bord est à ±0,2 m dans 61 à 86 % des cas selon la plage (environ 70 % en moyenne). `npm run calibrate` refait ce contrôle.
-- **Le déferlement lui-même** n’est pas encore mesuré sur nos plages. C’est la prochaine étape de validation : observations sur place.
+Chiffres à jour dans [`data/rapport.md`](data/rapport.md), recalculés chaque lundi. Au 5 octobre 2026, sur 15 jours :
+
+- **Houle face aux bouées** (écart médian) : le modèle côtier est juste au Pays basque (−3 à +3 %), un peu fort en Gironde et en Bretagne (+9 à +14 %), et trop fort en Vendée et Loire-Atlantique (+27 à +47 %). Open-Meteo seul est encore plus fort dans cette zone (+37 à +57 %).
+- **Open-Meteo recalé face au modèle côtier**, sur des jours non utilisés pour le calage : la taille au bord est à ±0,2 m dans 72 à 88 % des cas selon la plage.
+- **Le déferlement lui-même** n’est pas encore mesuré sur nos plages : observations sur place à venir.
 
 ## Archive et recalage
 
