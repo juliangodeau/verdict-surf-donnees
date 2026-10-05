@@ -10,7 +10,12 @@
    "lon": -1.44914,
    "depth": 13.7
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200066",
+   "6200079",
+   "6200064"
+  ]
  },
  {
   "id": "grav",
@@ -23,7 +28,12 @@
    "lon": -1.44979,
    "depth": 12.6
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200066",
+   "6200079",
+   "6200064"
+  ]
  },
  {
   "id": "piste",
@@ -36,7 +46,12 @@
    "lon": -1.45648,
    "depth": 12.2
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200066",
+   "6200079",
+   "6200064"
+  ]
  },
  {
   "id": "bourd",
@@ -49,7 +64,12 @@
    "lon": -1.4494,
    "depth": 12.1
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200066",
+   "6200079",
+   "6200064"
+  ]
  },
  {
   "id": "penon",
@@ -62,7 +82,12 @@
    "lon": -1.44731,
    "depth": 12.0
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200066",
+   "6200079",
+   "6200064"
+  ]
  },
  {
   "id": "vieux",
@@ -75,7 +100,12 @@
    "lon": -1.42612,
    "depth": 12.2
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200066",
+   "6200079",
+   "6200064"
+  ]
  },
  {
   "id": "moli",
@@ -88,7 +118,12 @@
    "lon": -1.41222,
    "depth": 12.3
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200066",
+   "6200079",
+   "6200064"
+  ]
  },
  {
   "id": "cavs",
@@ -101,7 +136,11 @@
    "lon": -1.5383,
    "depth": 12.1
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200079",
+   "6200066"
+  ]
  },
  {
   "id": "basq",
@@ -114,7 +153,11 @@
    "lon": -1.58148,
    "depth": 12.2
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200079",
+   "6200066"
+  ]
  },
  {
   "id": "hend",
@@ -127,7 +170,11 @@
    "lon": -1.78176,
    "depth": 12.1
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200079",
+   "6200066"
+  ]
  },
  {
   "id": "lac",
@@ -140,7 +187,10 @@
    "lon": -1.21582,
    "depth": 12.1
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200064"
+  ]
  },
  {
   "id": "carc",
@@ -153,7 +203,10 @@
    "lon": -1.20738,
    "depth": 12.2
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200064"
+  ]
  },
  {
   "id": "mont",
@@ -166,7 +219,10 @@
    "lon": -1.18178,
    "depth": 12.1
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200064"
+  ]
  },
  {
   "id": "vert",
@@ -179,7 +235,11 @@
    "lon": -1.31245,
    "depth": 12.3
   },
-  "grid": "R1141_CHARENTES-200M"
+  "grid": "R1141_CHARENTES-200M",
+  "buoys": [
+   "6200064",
+   "6200067"
+  ]
  },
  {
   "id": "sauv",
@@ -192,7 +252,11 @@
    "lon": -1.3112,
    "depth": 12.0
   },
-  "grid": "R1142_AQUITAINE-200M"
+  "grid": "R1142_AQUITAINE-200M",
+  "buoys": [
+   "6200064",
+   "6200067"
+  ]
  },
  {
   "id": "sauz",
@@ -205,7 +269,11 @@
    "lon": -1.89878,
    "depth": 12.3
   },
-  "grid": "R1141_CHARENTES-200M"
+  "grid": "R1141_CHARENTES-200M",
+  "buoys": [
+   "6200067",
+   "6200251"
+  ]
  },
  {
   "id": "dunes",
@@ -218,7 +286,11 @@
    "lon": -1.88122,
    "depth": 12.0
   },
-  "grid": "R1141_CHARENTES-200M"
+  "grid": "R1141_CHARENTES-200M",
+  "buoys": [
+   "6200067",
+   "6200251"
+  ]
  },
  {
   "id": "conch",
@@ -231,7 +303,11 @@
    "lon": -1.53517,
    "depth": 12.2
   },
-  "grid": "R1141_CHARENTES-200M"
+  "grid": "R1141_CHARENTES-200M",
+  "buoys": [
+   "6200067",
+   "6200251"
+  ]
  },
  {
   "id": "terr",
@@ -244,7 +320,11 @@
    "lon": -1.48081,
    "depth": 12.1
   },
-  "grid": "R1141_CHARENTES-200M"
+  "grid": "R1141_CHARENTES-200M",
+  "buoys": [
+   "6200067",
+   "6200251"
+  ]
  },
  {
   "id": "sion",
@@ -257,7 +337,11 @@
    "lon": -2.00929,
    "depth": 12.0
   },
-  "grid": "R1132_LOIRE-200M"
+  "grid": "R1132_LOIRE-200M",
+  "buoys": [
+   "6200067",
+   "6200251"
+  ]
  },
  {
   "id": "sabl",
@@ -270,7 +354,11 @@
    "lon": -1.78242,
    "depth": 12.1
   },
-  "grid": "R1141_CHARENTES-200M"
+  "grid": "R1141_CHARENTES-200M",
+  "buoys": [
+   "6200067",
+   "6200251"
+  ]
  },
  {
   "id": "gov",
@@ -283,7 +371,11 @@
    "lon": -2.49666,
    "depth": 12.4
   },
-  "grid": "R1132_LOIRE-200M"
+  "grid": "R1132_LOIRE-200M",
+  "buoys": [
+   "6200078",
+   "6200074"
+  ]
  },
  {
   "id": "penth",
@@ -296,7 +388,11 @@
    "lon": -3.16004,
    "depth": 12.4
   },
-  "grid": "R1132_LOIRE-200M"
+  "grid": "R1132_LOIRE-200M",
+  "buoys": [
+   "6200074",
+   "6200078"
+  ]
  },
  {
   "id": "portb",
@@ -309,7 +405,11 @@
    "lon": -3.1471,
    "depth": 13.8
   },
-  "grid": "R1132_LOIRE-200M"
+  "grid": "R1132_LOIRE-200M",
+  "buoys": [
+   "6200074",
+   "6200078"
+  ]
  },
  {
   "id": "torch",
@@ -322,7 +422,11 @@
    "lon": -4.36599,
    "depth": 12.1
   },
-  "grid": "R1131_SUDBZH-200M"
+  "grid": "R1131_SUDBZH-200M",
+  "buoys": [
+   "6200069",
+   "6200074"
+  ]
  },
  {
   "id": "pors",
@@ -335,6 +439,10 @@
    "lon": -4.37004,
    "depth": 13.4
   },
-  "grid": "R1131_SUDBZH-200M"
+  "grid": "R1131_SUDBZH-200M",
+  "buoys": [
+   "6200069",
+   "6200074"
+  ]
  }
 ]

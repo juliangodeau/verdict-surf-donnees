@@ -9,4 +9,6 @@ export interface Spot {
   ref: { lat: number; lon: number; depth: number };
   /** Grille du modèle côtier Shom qui couvre le point de mesure. */
   grid: string;
+  /** Bouées de référence pour corriger le modèle, par ordre de préférence (codes OMM, voir src/buoys.ts). */
+  buoys: string[];
 }

@@ -15,11 +15,12 @@ Ce dépôt calcule la vague.
 1. **La houle devant la plage, vers 12 m de fond.**
    - Jusqu’à demain soir : modèle de vagues côtier du Shom et de Météo-France, qui tient compte du fond, des îles et des caps (maille de 200 m).
    - Ensuite, jusqu’à 7 jours : Open-Meteo (MFWAM), recalé plage par plage sur ce modèle côtier (`data/calibration.json`).
-2. **On retire le clapot** levé par le vent local : il ne fait pas de vagues à surfer.
-3. **Le déferlement.** On ramène la houle à son équivalent au large, puis on calcule le déferlement :
+2. **On corrige la houle avec les bouées réelles.** Chaque plage est rattachée à une bouée de référence (Yeu pour la Vendée, Cap Ferret pour la Gironde…). Si le modèle y annonce plus que la mesure, on corrige d’autant, entre ×0,7 et ×1,3, seulement si la correction réduit l’erreur sur des jours non utilisés pour la caler. Recalculé chaque lundi.
+3. **On retire le clapot** levé par le vent local : il ne fait pas de vagues à surfer.
+4. **Le déferlement.** On ramène la houle à son équivalent au large, puis on calcule le déferlement :
    - formule de Komar et Gaughan (1972) ;
    - multipliée par 0,7, parce qu’une vraie houle mélange des vagues de tailles différentes et que les plus grosses cassent plus tôt (Goda 2010, Thornton et Guza 1984).
-4. **Ce que voit un observateur** sur la plage :
+5. **Ce que voit un observateur** sur la plage :
    - de 0,71 à 1 fois la hauteur au déferlement (Schneider et Weggel 1980) ;
    - les séries, les plus grosses vagues, à 1,27 fois.
 
@@ -30,6 +31,7 @@ La méthode, les mesures et les sources sont détaillées dans l’étude du pro
 Chiffres à jour dans [`data/rapport.md`](data/rapport.md), recalculés chaque lundi. Au 5 octobre 2026, sur 15 jours :
 
 - **Houle face aux bouées** (écart médian) : le modèle côtier est juste au Pays basque (−3 à +3 %), un peu fort en Gironde et en Bretagne (+9 à +14 %), et trop fort en Vendée et Loire-Atlantique (+27 à +47 %). Open-Meteo seul est encore plus fort dans cette zone (+37 à +57 %).
+- **Après correction par les bouées** (contrôle sur des jours non utilisés) : l’erreur médiane sur la houle passe de 27 à 10 % à Yeu, de 33 à 9 % au Croisic, de 57 à 18 % à Noirmoutier, de 21 à 11 % à Belle-Île, de 21 à 16 % au Cap Ferret.
 - **Open-Meteo recalé face au modèle côtier**, sur des jours non utilisés pour le calage : la taille au bord est à ±0,2 m dans 72 à 88 % des cas selon la plage.
 - **Le déferlement lui-même** n’est pas encore mesuré sur nos plages : observations sur place à venir.
 

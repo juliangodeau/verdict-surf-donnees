@@ -4,20 +4,49 @@ Archive : 15 jours (2026-09-20 → 2026-10-04). Mis à jour chaque semaine.
 
 ## Houle face aux bouées
 
-Écart médian de la hauteur significative avec la mesure (+10 % : le modèle annonce 10 % de trop).
+Écart médian de la hauteur significative avec la mesure (+10 % : le modèle annonce 10 % de trop), et correction appliquée au modèle côtier (bornée entre ×0,7 et ×1,3, à partir de 100 mesures). Contrôle : erreur médiane sur la seconde moitié de l’archive, avant → après une correction calée sur la première.
 
-| Bouée | Mesures | Modèle côtier Shom | Open-Meteo (MFWAM) |
-|---|---|---|---|
-| Gascogne (large) | 81 | — | -1 % |
-| Bilbao-Vizcaya | 120 | — | -4 % |
-| Cap Ferret | 360 | +12 % | +18 % |
-| Anglet | 250 | +3 % | +7 % |
-| Île d’Yeu Nord | 331 | +27 % | +45 % |
-| Les Pierres Noires | 357 | +9 % | +10 % |
-| Belle-Île | 360 | +14 % | +18 % |
-| SEM-REV (Le Croisic) | 304 | +27 % | +57 % |
-| Saint-Jean-de-Luz | 360 | -3 % | -2 % |
-| Noirmoutier | 360 | +47 % | +37 % |
+| Bouée | Mesures | Modèle côtier Shom | Open-Meteo (MFWAM) | Correction | Erreur avant → après |
+|---|---|---|---|---|---|
+| Gascogne (large) | 0 | — | -1 % | aucune (trop peu de mesures) | — → — |
+| Bilbao-Vizcaya | 0 | — | -4 % | aucune (trop peu de mesures) | — → — |
+| Cap Ferret | 120 | +12 % | +18 % | ×0,90 | 21 % → 16 % |
+| Anglet | 84 | +3 % | +7 % | aucune (trop peu de mesures) | 12 % → 14 % |
+| Île d’Yeu Nord | 110 | +27 % | +45 % | ×0,79 | 27 % → 10 % |
+| Les Pierres Noires | 119 | +9 % | +10 % | aucune (sans effet) | 16 % → 17 % |
+| Belle-Île | 120 | +14 % | +18 % | ×0,88 | 21 % → 11 % |
+| SEM-REV (Le Croisic) | 101 | +27 % | +57 % | ×0,79 | 33 % → 9 % |
+| Saint-Jean-de-Luz | 120 | -3 % | -2 % | aucune (sans effet) | 16 % → 16 % |
+| Noirmoutier | 120 | +47 % | +37 % | ×0,70 | 57 % → 18 % |
+
+| Plage | Bouée de référence | Correction |
+|---|---|---|
+| Hossegor Sud | Saint-Jean-de-Luz | ×1,00 |
+| La Gravière | Saint-Jean-de-Luz | ×1,00 |
+| La Piste | Saint-Jean-de-Luz | ×1,00 |
+| Les Bourdaines | Saint-Jean-de-Luz | ×1,00 |
+| Le Penon | Saint-Jean-de-Luz | ×1,00 |
+| Vieux-Boucau | Saint-Jean-de-Luz | ×1,00 |
+| Moliets | Saint-Jean-de-Luz | ×1,00 |
+| Les Cavaliers | Saint-Jean-de-Luz | ×1,00 |
+| Côte des Basques | Saint-Jean-de-Luz | ×1,00 |
+| Hendaye | Saint-Jean-de-Luz | ×1,00 |
+| Lacanau Centrale | Cap Ferret | ×0,90 |
+| Carcans-Plage | Cap Ferret | ×0,90 |
+| Montalivet | Cap Ferret | ×0,90 |
+| Vert Bois | Cap Ferret | ×0,90 |
+| La Côte Sauvage | Cap Ferret | ×0,90 |
+| La Sauzaie | Île d’Yeu Nord | ×0,79 |
+| Les Dunes | Île d’Yeu Nord | ×0,79 |
+| Les Conches | Île d’Yeu Nord | ×0,79 |
+| La Terrière | Île d’Yeu Nord | ×0,79 |
+| Sion-sur-l’Océan | Île d’Yeu Nord | ×0,79 |
+| Grande Plage | Île d’Yeu Nord | ×0,79 |
+| La Govelle | SEM-REV (Le Croisic) | ×0,79 |
+| Penthièvre | Belle-Île | ×0,88 |
+| Port Blanc | Belle-Île | ×0,88 |
+| La Torche | Les Pierres Noires | ×1,00 |
+| Pors Carn | Les Pierres Noires | ×1,00 |
 
 ## Calage d’Open-Meteo, plage par plage
 

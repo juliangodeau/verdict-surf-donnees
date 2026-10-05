@@ -30,3 +30,32 @@ export function median(xs: number[]): number {
   const m = s.length >> 1;
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
 }
+
+/**
+ * Correction du modèle côtier par les bouées : rapport médian mesure / modèle à l'emplacement d'une bouée,
+ * appliqué aux plages qui s'y rattachent. Bornée, et seulement avec assez de mesures.
+ */
+export const BUOY_CORRECTION = { min: 0.7, max: 1.3, minPairs: 100 } as const;
+
+export interface BuoyCorrection {
+  /** Facteur à appliquer à la houle du modèle (mesure / modèle). */
+  k: number;
+  /** Mesures appariées. */
+  n: number;
+  /** La correction réduit l'erreur d'au moins un point sur des jours non utilisés pour la caler. */
+  useful: boolean;
+}
+
+export const clampCorrection = (k: number) => Math.min(BUOY_CORRECTION.max, Math.max(BUOY_CORRECTION.min, k));
+
+/**
+ * Facteur pour une plage : sa première bouée de référence qui a assez de mesures. Si la correction de cette bouée
+ * n'a pas fait ses preuves sur les jours de contrôle, on garde le modèle tel quel (facteur 1).
+ */
+export function correctionFor(buoys: string[], table: Record<string, BuoyCorrection> | undefined): { k: number; buoy: string | null } {
+  for (const code of buoys) {
+    const c = table?.[code];
+    if (c && c.n >= BUOY_CORRECTION.minPairs && Number.isFinite(c.k)) return { k: c.useful ? clampCorrection(c.k) : 1, buoy: code };
+  }
+  return { k: 1, buoy: null };
+}

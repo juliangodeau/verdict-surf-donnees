@@ -8,7 +8,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 import { loadArchive, spotHistory, type ArchiveDay } from '../src/archive.ts';
 import { BUOYS } from '../src/buoys.ts';
-import { coastalFromOpenMeteo, median, type Transfer } from '../src/calibration.ts';
+import { BUOY_CORRECTION, clampCorrection, coastalFromOpenMeteo, correctionFor, median, type BuoyCorrection, type Transfer } from '../src/calibration.ts';
 import { surfSize } from '../src/height.ts';
 import type { OpenMeteoSeries } from '../src/openmeteo.ts';
 import type { ShomStep } from '../src/shom.ts';
@@ -76,10 +76,13 @@ for (const s of spots) {
   spotRows.push(`| ${s.name} | ${ps.length} | ${m2(all.h)} / ${m2(all.t)} | ${pct(check.within)} | ${m2(check.rmse)} m |`);
 }
 
-// 2. Contrôle face aux bouées : hauteur significative du modèle côtier et d'Open-Meteo contre la mesure.
+// 2. Correction par les bouées : rapport mesure / modèle côtier à l'emplacement de chaque bouée.
+//    Contrôle : facteur calé sur la première moitié, erreur mesurée sur la seconde, avant et après correction.
+const buoys: Record<string, BuoyCorrection> = {};
 const buoyRows: string[] = [];
 for (const [code, b] of Object.entries(BUOYS)) {
-  const rs: number[] = [], ro: number[] = [];
+  const shomPairs: { t: number; obs: number; mod: number }[] = [];
+  const omRatios: number[] = [];
   for (const d of days) {
     const x = d.buoys?.[code];
     if (!x?.obs) continue;
@@ -94,28 +97,49 @@ for (const [code, b] of Object.entries(BUOYS)) {
     };
     for (const s of x.shom) {
       const o = obsAt(s.t);
-      if (o && o > 0.3) rs.push(s.hs / o);
+      if (o && o > 0.3 && s.hs > 0.1) shomPairs.push({ t: Date.parse(s.t), obs: o, mod: s.hs });
     }
     if (x.om) x.om.time.forEach((t, i) => {
       const o = obsAt(t), m = x.om!.wave_height[i];
-      if (o && o > 0.3 && m != null) ro.push(m / o);
+      if (o && o > 0.3 && m != null) omRatios.push(m / o);
     });
   }
-  buoyRows.push(`| ${b.name} | ${rs.length + ro.length ? Math.max(rs.length, ro.length) : 0} | ${sign(rs.length ? median(rs) - 1 : NaN)} | ${sign(ro.length ? median(ro) - 1 : NaN)} |`);
+  shomPairs.sort((p, q) => p.t - q.t);
+  const n = shomPairs.length;
+  let k = NaN, before = NaN, after = NaN;
+  if (n) {
+    k = median(shomPairs.map((p) => p.obs / p.mod));
+    const half = n >> 1;
+    const kTrain = half ? clampCorrection(median(shomPairs.slice(0, half).map((p) => p.obs / p.mod))) : 1;
+    const test = shomPairs.slice(half);
+    before = median(test.map((p) => Math.abs(p.mod / p.obs - 1)));
+    after = median(test.map((p) => Math.abs((kTrain * p.mod) / p.obs - 1)));
+    buoys[code] = { k: +k.toFixed(3), n, useful: after < before - 0.01 };
+  }
+  const used = n >= BUOY_CORRECTION.minPairs && buoys[code]?.useful;
+  buoyRows.push(`| ${b.name} | ${n} | ${sign(n ? 1 / k - 1 : NaN)} | ${sign(omRatios.length ? median(omRatios) - 1 : NaN)} | ${used ? '×' + m2(clampCorrection(k)) : n >= BUOY_CORRECTION.minPairs ? 'aucune (sans effet)' : 'aucune (trop peu de mesures)'} | ${pct(before)} → ${pct(after)} |`);
 }
+const spotBuoy = spots.map((s) => {
+  const c = correctionFor(s.buoys, buoys);
+  return `| ${s.name} | ${c.buoy ? BUOYS[c.buoy].name : '—'} | ×${m2(c.k)} |`;
+});
 
-writeFileSync('data/calibration.json', JSON.stringify({ model: 'meteofrance_wave', days: days.length, from: days[0]?.date, to: days.at(-1)?.date, spots: result }, null, 1) + '\n');
+writeFileSync('data/calibration.json', JSON.stringify({ model: 'meteofrance_wave', days: days.length, from: days[0]?.date, to: days.at(-1)?.date, buoys, spots: result }, null, 1) + '\n');
 writeFileSync('data/rapport.md', `# Rapport de calage
 
 Archive : ${days.length} jours (${days[0]?.date ?? '—'} → ${days.at(-1)?.date ?? '—'}). Mis à jour chaque semaine.
 
 ## Houle face aux bouées
 
-Écart médian de la hauteur significative avec la mesure (+10 % : le modèle annonce 10 % de trop).
+Écart médian de la hauteur significative avec la mesure (+10 % : le modèle annonce 10 % de trop), et correction appliquée au modèle côtier (bornée entre ×0,7 et ×1,3, à partir de ${BUOY_CORRECTION.minPairs} mesures). Contrôle : erreur médiane sur la seconde moitié de l’archive, avant → après une correction calée sur la première.
 
-| Bouée | Mesures | Modèle côtier Shom | Open-Meteo (MFWAM) |
-|---|---|---|---|
+| Bouée | Mesures | Modèle côtier Shom | Open-Meteo (MFWAM) | Correction | Erreur avant → après |
+|---|---|---|---|---|---|
 ${buoyRows.join('\n')}
+
+| Plage | Bouée de référence | Correction |
+|---|---|---|
+${spotBuoy.join('\n')}
 
 ## Calage d’Open-Meteo, plage par plage
 

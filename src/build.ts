@@ -6,7 +6,7 @@
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
-import { DEFAULT_TRANSFER, coastalFromOpenMeteo, type Transfer } from './calibration.ts';
+import { DEFAULT_TRANSFER, coastalFromOpenMeteo, correctionFor, type BuoyCorrection, type Transfer } from './calibration.ts';
 import { surfSize, type CoastalSea } from './height.ts';
 import { fetchOpenMeteo, type OpenMeteoSeries } from './openmeteo.ts';
 import { availableUntil, series, steps3h, type ShomStep } from './shom.ts';
@@ -16,7 +16,7 @@ const HOUR = 3600_000;
 const BLEND_HOURS = 6;
 
 const spots: Spot[] = JSON.parse(readFileSync('data/spots.json', 'utf8'));
-const calib: { spots: Record<string, Transfer> } = JSON.parse(readFileSync('data/calibration.json', 'utf8'));
+const calib: { spots: Record<string, Transfer>; buoys?: Record<string, BuoyCorrection> } = JSON.parse(readFileSync('data/calibration.json', 'utf8'));
 
 /** Valeur interpolée linéairement entre deux pas de 3 h du modèle côtier. */
 function shomAt(steps: ShomStep[], t: number): (CoastalSea & { dir: number }) | null {
@@ -44,8 +44,10 @@ async function spotForecast(s: Spot, start: Date, shomUntil: Date) {
     fetchOpenMeteo(s.ref, { start, end: new Date(start.getTime() + 7 * 24 * HOUR) }),
   ]);
   const tr = calib.spots[s.id] ?? DEFAULT_TRANSFER;
+  // Correction mesurée aux bouées de référence de la plage (rapport mesure / modèle côtier).
+  const { k, buoy } = correctionFor(s.buoys, calib.buoys);
   const shomEnd = steps.length ? Date.parse(steps.at(-1)!.t) : 0;
-  const out = { lo: [] as number[], hi: [] as number[], sets: [] as number[], swell: [] as number[], period: [] as number[], dir: [] as (number | null)[], src: '' };
+  const out = { corr: +k.toFixed(2), buoy, lo: [] as number[], hi: [] as number[], sets: [] as number[], swell: [] as number[], period: [] as number[], dir: [] as (number | null)[], src: '' };
   om.time.forEach((iso, i) => {
     const t = Date.parse(iso);
     if (t < start.getTime()) return;
@@ -59,6 +61,7 @@ async function spotForecast(s: Spot, start: Date, shomUntil: Date) {
       src = 'm';
     }
     if (!sea) { out.lo.push(-1); out.hi.push(-1); out.sets.push(-1); out.swell.push(-1); out.period.push(-1); out.dir.push(null); out.src += '-'; return; }
+    sea = { ...sea, hs: sea.hs * k, hWind: sea.hWind * k };
     const size = surfSize(sea);
     out.lo.push(size.lo); out.hi.push(size.hi); out.sets.push(size.sets);
     out.swell.push(r1(Math.sqrt(Math.max(0, sea.hs ** 2 - sea.hWind ** 2))));
