@@ -1,0 +1,47 @@
+name: Archive et recalage
+
+on:
+  schedule:
+    # Chaque nuit : archive de la veille. Le lundi : recalage sur les 60 derniers jours.
+    - cron: '40 2 * * *'
+  workflow_dispatch:
+    inputs:
+      calibrate:
+        description: 'Recaler aussi Open-Meteo'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Archive de la veille
+        run: node scripts/archive.ts
+      - name: Recalage (le lundi, ou à la demande)
+        run: |
+          if [ "${{ inputs.calibrate }}" = "true" ] || [ "$(date -u +%u)" = "1" ]; then
+            npm run calibrate
+            npm test
+          fi
+      - name: Enregistrer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive data
+          if git diff --cached --quiet; then echo "Rien de nouveau"; exit 0; fi
+          git commit -m "Archive du $(date -u -d yesterday +%F)"
+          git push

@@ -31,13 +31,17 @@ La méthode, les mesures et les sources sont détaillées dans l’étude du pro
 - **Open-Meteo recalé face au modèle côtier**, sur des jours non utilisés pour le calage : la taille au bord est à ±0,2 m dans 61 à 86 % des cas selon la plage (environ 70 % en moyenne). `npm run calibrate` refait ce contrôle.
 - **Le déferlement lui-même** n’est pas encore mesuré sur nos plages. C’est la prochaine étape de validation : observations sur place.
 
+## Archive et recalage
+
+Chaque nuit, une tâche archive la veille dans `archive/` : modèle côtier et Open-Meteo aux points de mesure des plages, mesures des bouées de la façade (Copernicus Marine In Situ) et modèles à l’emplacement des bouées. Chaque lundi, Open-Meteo est recalé sur les 60 derniers jours. Le rapport `data/rapport.md` montre l’écart avec les bouées et la qualité du calage.
+
 ## Commandes
 
 ```
 npm test           # tests
 npm run build      # calcule public/forecast.json
-npm run history    # récupère l’historique Shom et Open-Meteo (cache/)
-npm run calibrate  # recale Open-Meteo sur le modèle côtier
+npm run archive    # archive la veille : modèle côtier, Open-Meteo et bouées (archive/)
+npm run calibrate  # recale Open-Meteo sur les 60 derniers jours d’archive, écrit data/rapport.md
 ```
 
 ## Sources et licences
@@ -45,3 +49,4 @@ npm run calibrate  # recale Open-Meteo sur le modèle côtier
 - Shom / Météo-France, modèle de vagues côtier WaveWatch III, Licence Ouverte Etalab 2.0.
 - Shom, MNT bathymétrique de façade Atlantique (HOMONIM), Licence Ouverte Etalab 2.0.
 - Open-Meteo Marine, CC BY 4.0.
+- Copernicus Marine Service, mesures in situ IBI (bouées Candhis, Météo-France, Puertos del Estado).

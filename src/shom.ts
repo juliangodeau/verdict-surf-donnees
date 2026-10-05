@@ -34,6 +34,8 @@ async function value(layer: string, lat: number, lon: number, time: string): Pro
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const res = await fetch(`${WMS}?${q}`, { signal: AbortSignal.timeout(60_000) });
+      // Erreur définitive (date hors de la fenêtre du modèle, point hors grille) : inutile de réessayer.
+      if (res.status >= 400 && res.status < 500) return null;
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const m = /<value>([^<]*)<\/value>/.exec(await res.text());
       if (!m) return null;
@@ -93,4 +95,21 @@ export async function series(p: ShomPoint, times: string[], parallel = 8): Promi
     out.push({ t, hs, hWind, tp, depth: p.depth, dir: (dirTo + 180) % 360 });
   });
   return out;
+}
+
+/** Grilles du modèle côtier sur l'Atlantique, de la plus fine à la plus large : [ouest, est, sud, nord]. */
+const GRIDS: [string, [number, number, number, number]][] = [
+  ['R1142_AQUITAINE-200M', [-1.9012, -0.4988, 43.2992, 45.8008]],
+  ['R1141_CHARENTES-200M', [-2.1012, -0.9988, 45.6992, 46.7008]],
+  ['R1132_LOIRE-200M', [-3.5012, -1.9988, 46.5992, 47.7008]],
+  ['R1131_SUDBZH-200M', [-4.7537, -3.1288, 47.1992, 47.9325]],
+  ['R1122_FINIS-200M', [-5.3509, -4.0996, 47.7334, 48.8024]],
+  ['R1140_GASCOGNE-SUD-500M', [-3.4031, 0.9031, 43.1978, 46.9022]],
+  ['R1130_GASCOGNE-NORD-500M', [-6.6031, 1.4031, 46.3977, 48.5022]],
+  ['R1100_NORGAS-2MIN', [-7.0167, 4.7167, 43.2833, 52.9167]],
+];
+
+/** La grille la plus fine qui couvre un point, ou null hors des grilles atlantiques. */
+export function gridFor(lat: number, lon: number): string | null {
+  return GRIDS.find(([, [w, e, s, n]]) => lon >= w && lon <= e && lat >= s && lat <= n)?.[0] ?? null;
 }
