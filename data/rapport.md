@@ -1,6 +1,6 @@
 # Rapport de calage
 
-Archive : 43 jours (2026-09-20 → 2026-11-01). Mis à jour chaque semaine.
+Archive : 50 jours (2026-09-20 → 2026-11-08). Mis à jour chaque semaine.
 
 ## Houle face aux bouées
 
@@ -9,15 +9,15 @@ Archive : 43 jours (2026-09-20 → 2026-11-01). Mis à jour chaque semaine.
 | Bouée | Mesures | Modèle côtier Shom | Open-Meteo (MFWAM) | Correction | Erreur avant → après |
 |---|---|---|---|---|---|
 | Gascogne (large) | 0 | — | +0 % | aucune (trop peu de mesures) | — → — |
-| Bilbao-Vizcaya | 0 | — | -3 % | aucune (trop peu de mesures) | — → — |
-| Cap Ferret | 309 | +11 % | +15 % | ×0,90 | 10 % → 9 % |
-| Anglet | 198 | +2 % | +7 % | aucune (sans effet) | 8 % → 10 % |
-| Île d’Yeu Nord | 292 | +20 % | +43 % | ×0,83 | 19 % → 8 % |
-| Les Pierres Noires | 301 | +12 % | +14 % | ×0,90 | 14 % → 9 % |
-| Belle-Île | 309 | +12 % | +16 % | ×0,89 | 11 % → 9 % |
-| SEM-REV (Le Croisic) | 231 | +26 % | +52 % | ×0,79 | 24 % → 10 % |
-| Saint-Jean-de-Luz | 309 | -3 % | +0 % | aucune (sans effet) | 11 % → 12 % |
-| Noirmoutier | 309 | +36 % | +29 % | ×0,73 | 31 % → 10 % |
+| Bilbao-Vizcaya | 1 | -4 % | -3 % | aucune (trop peu de mesures) | 4 % → 4 % |
+| Cap Ferret | 365 | +12 % | +17 % | aucune (sans effet) | 12 % → 11 % |
+| Anglet | 248 | +3 % | +8 % | aucune (sans effet) | 11 % → 12 % |
+| Île d’Yeu Nord | 328 | +19 % | +43 % | ×0,84 | 16 % → 8 % |
+| Les Pierres Noires | 356 | +14 % | +18 % | ×0,88 | 16 % → 11 % |
+| Belle-Île | 365 | +13 % | +18 % | ×0,89 | 14 % → 9 % |
+| SEM-REV (Le Croisic) | 259 | +24 % | +50 % | ×0,81 | 22 % → 10 % |
+| Saint-Jean-de-Luz | 358 | -2 % | +0 % | aucune (sans effet) | 12 % → 13 % |
+| Noirmoutier | 364 | +36 % | +30 % | ×0,73 | 31 % → 10 % |
 
 | Plage | Bouée de référence | Correction |
 |---|---|---|
@@ -31,22 +31,22 @@ Archive : 43 jours (2026-09-20 → 2026-11-01). Mis à jour chaque semaine.
 | Les Cavaliers | Saint-Jean-de-Luz | ×1,00 |
 | Côte des Basques | Saint-Jean-de-Luz | ×1,00 |
 | Hendaye | Saint-Jean-de-Luz | ×1,00 |
-| Lacanau Centrale | Cap Ferret | ×0,90 |
-| Carcans-Plage | Cap Ferret | ×0,90 |
-| Montalivet | Cap Ferret | ×0,90 |
-| Vert Bois | Cap Ferret | ×0,90 |
-| La Côte Sauvage | Cap Ferret | ×0,90 |
-| La Sauzaie | Île d’Yeu Nord | ×0,83 |
-| Les Dunes | Île d’Yeu Nord | ×0,83 |
-| Les Conches | Île d’Yeu Nord | ×0,83 |
-| La Terrière | Île d’Yeu Nord | ×0,83 |
-| Sion-sur-l’Océan | Île d’Yeu Nord | ×0,83 |
-| Grande Plage | Île d’Yeu Nord | ×0,83 |
-| La Govelle | SEM-REV (Le Croisic) | ×0,80 |
+| Lacanau Centrale | Cap Ferret | ×1,00 |
+| Carcans-Plage | Cap Ferret | ×1,00 |
+| Montalivet | Cap Ferret | ×1,00 |
+| Vert Bois | Cap Ferret | ×1,00 |
+| La Côte Sauvage | Cap Ferret | ×1,00 |
+| La Sauzaie | Île d’Yeu Nord | ×0,84 |
+| Les Dunes | Île d’Yeu Nord | ×0,84 |
+| Les Conches | Île d’Yeu Nord | ×0,84 |
+| La Terrière | Île d’Yeu Nord | ×0,84 |
+| Sion-sur-l’Océan | Île d’Yeu Nord | ×0,84 |
+| Grande Plage | Île d’Yeu Nord | ×0,84 |
+| La Govelle | SEM-REV (Le Croisic) | ×0,81 |
 | Penthièvre | Belle-Île | ×0,89 |
 | Port Blanc | Belle-Île | ×0,89 |
-| La Torche | Les Pierres Noires | ×0,90 |
-| Pors Carn | Les Pierres Noires | ×0,90 |
+| La Torche | Les Pierres Noires | ×0,88 |
+| Pors Carn | Les Pierres Noires | ×0,88 |
 
 ## Calage d’Open-Meteo, plage par plage
 
@@ -54,29 +54,29 @@ Coefficients hauteur / période. Contrôle sur la seconde moitié de l’archive
 
 | Plage | Pas de 3 h | Coefficients | À ±0,2 m | Écart type |
 |---|---|---|---|---|
-| Hossegor Sud | 344 | 0,75 / 1,14 | 62 % | 0,26 m |
-| La Gravière | 344 | 0,92 / 1,22 | 69 % | 0,52 m |
-| La Piste | 344 | 0,71 / 1,20 | 78 % | 0,31 m |
-| Les Bourdaines | 344 | 1,09 / 1,32 | 67 % | 0,51 m |
-| Le Penon | 344 | 1,08 / 1,33 | 69 % | 0,51 m |
-| Vieux-Boucau | 344 | 0,99 / 1,30 | 59 % | 0,62 m |
-| Moliets | 344 | 1,04 / 1,29 | 70 % | 0,58 m |
-| Les Cavaliers | 344 | 1,00 / 1,27 | 72 % | 0,52 m |
-| Côte des Basques | 344 | 1,17 / 1,25 | 65 % | 0,53 m |
-| Hendaye | 344 | 0,23 / 1,31 | 68 % | 0,21 m |
-| Lacanau Centrale | 344 | 0,96 / 1,27 | 67 % | 0,46 m |
-| Carcans-Plage | 344 | 0,97 / 1,27 | 76 % | 0,48 m |
-| Montalivet | 344 | 1,02 / 1,26 | 66 % | 0,78 m |
-| Vert Bois | 344 | 0,86 / 1,29 | 76 % | 0,57 m |
-| La Côte Sauvage | 344 | 0,96 / 1,25 | 65 % | 0,74 m |
-| La Sauzaie | 344 | 0,85 / 1,27 | 72 % | 0,43 m |
-| Les Dunes | 344 | 0,92 / 1,27 | 72 % | 0,48 m |
-| Les Conches | 344 | 0,85 / 1,30 | 69 % | 0,38 m |
-| La Terrière | 344 | 0,84 / 1,26 | 63 % | 0,45 m |
-| Sion-sur-l’Océan | 344 | 0,69 / 1,27 | 75 % | 0,25 m |
-| Grande Plage | 344 | 0,59 / 1,28 | 75 % | 0,23 m |
-| La Govelle | 344 | 1,03 / 1,30 | 70 % | 0,34 m |
-| Penthièvre | 344 | 0,87 / 1,32 | 66 % | 0,28 m |
-| Port Blanc | 344 | 0,79 / 1,31 | 69 % | 0,30 m |
-| La Torche | 344 | 0,94 / 1,31 | 55 % | 0,66 m |
-| Pors Carn | 344 | 0,82 / 1,30 | 60 % | 0,66 m |
+| Hossegor Sud | 400 | 0,75 / 1,14 | 66 % | 0,25 m |
+| La Gravière | 400 | 0,93 / 1,22 | 70 % | 0,47 m |
+| La Piste | 400 | 0,72 / 1,20 | 79 % | 0,30 m |
+| Les Bourdaines | 400 | 1,11 / 1,32 | 71 % | 0,47 m |
+| Le Penon | 400 | 1,09 / 1,33 | 71 % | 0,47 m |
+| Vieux-Boucau | 400 | 1,01 / 1,30 | 61 % | 0,57 m |
+| Moliets | 400 | 1,05 / 1,28 | 69 % | 0,53 m |
+| Les Cavaliers | 400 | 1,01 / 1,27 | 73 % | 0,48 m |
+| Côte des Basques | 400 | 1,18 / 1,25 | 67 % | 0,50 m |
+| Hendaye | 400 | 0,24 / 1,30 | 70 % | 0,21 m |
+| Lacanau Centrale | 400 | 0,97 / 1,27 | 71 % | 0,43 m |
+| Carcans-Plage | 400 | 0,97 / 1,26 | 76 % | 0,45 m |
+| Montalivet | 400 | 1,04 / 1,26 | 70 % | 0,73 m |
+| Vert Bois | 400 | 0,86 / 1,28 | 80 % | 0,54 m |
+| La Côte Sauvage | 400 | 0,97 / 1,24 | 69 % | 0,69 m |
+| La Sauzaie | 400 | 0,87 / 1,25 | 77 % | 0,39 m |
+| Les Dunes | 400 | 0,94 / 1,27 | 76 % | 0,45 m |
+| Les Conches | 400 | 0,87 / 1,29 | 73 % | 0,35 m |
+| La Terrière | 400 | 0,86 / 1,25 | 73 % | 0,41 m |
+| Sion-sur-l’Océan | 400 | 0,71 / 1,26 | 79 % | 0,23 m |
+| Grande Plage | 400 | 0,60 / 1,28 | 81 % | 0,22 m |
+| La Govelle | 400 | 1,05 / 1,29 | 75 % | 0,31 m |
+| Penthièvre | 400 | 0,90 / 1,31 | 70 % | 0,26 m |
+| Port Blanc | 400 | 0,79 / 1,31 | 76 % | 0,28 m |
+| La Torche | 400 | 0,96 / 1,31 | 64 % | 0,61 m |
+| Pors Carn | 400 | 0,83 / 1,29 | 67 % | 0,60 m |
