@@ -1,6 +1,6 @@
 # Rapport de calage
 
-Archive : 57 jours (2026-09-20 → 2026-11-15). Mis à jour chaque semaine.
+Archive : 60 jours (2026-09-24 → 2026-11-22). Mis à jour chaque semaine.
 
 ## Houle face aux bouées
 
@@ -10,14 +10,14 @@ Archive : 57 jours (2026-09-20 → 2026-11-15). Mis à jour chaque semaine.
 |---|---|---|---|---|---|
 | Gascogne (large) | 0 | — | +0 % | aucune (trop peu de mesures) | — → — |
 | Bilbao-Vizcaya | 1 | -4 % | -3 % | aucune (trop peu de mesures) | 4 % → 4 % |
-| Cap Ferret | 420 | +13 % | +17 % | ×0,88 | 14 % → 11 % |
-| Anglet | 292 | +3 % | +7 % | aucune (sans effet) | 13 % → 13 % |
-| Île d’Yeu Nord | 384 | +18 % | +42 % | ×0,85 | 15 % → 9 % |
-| Les Pierres Noires | 409 | +14 % | +18 % | ×0,88 | 17 % → 12 % |
-| Belle-Île | 421 | +14 % | +18 % | ×0,88 | 15 % → 10 % |
-| SEM-REV (Le Croisic) | 309 | +24 % | +47 % | ×0,80 | 24 % → 11 % |
-| Saint-Jean-de-Luz | 398 | -2 % | +0 % | aucune (sans effet) | 13 % → 13 % |
-| Noirmoutier | 394 | +36 % | +30 % | ×0,74 | 32 % → 10 % |
+| Cap Ferret | 441 | +13 % | +15 % | ×0,88 | 14 % → 11 % |
+| Anglet | 262 | +5 % | +7 % | aucune (sans effet) | 14 % → 15 % |
+| Île d’Yeu Nord | 410 | +17 % | +42 % | ×0,85 | 14 % → 8 % |
+| Les Pierres Noires | 427 | +16 % | +18 % | ×0,86 | 17 % → 11 % |
+| Belle-Île | 442 | +14 % | +16 % | ×0,88 | 15 % → 9 % |
+| SEM-REV (Le Croisic) | 332 | +25 % | +45 % | ×0,80 | 26 % → 11 % |
+| Saint-Jean-de-Luz | 419 | +2 % | +3 % | aucune (sans effet) | 14 % → 15 % |
+| Noirmoutier | 415 | +34 % | +28 % | ×0,74 | 32 % → 9 % |
 
 | Plage | Bouée de référence | Correction |
 |---|---|---|
@@ -31,11 +31,11 @@ Archive : 57 jours (2026-09-20 → 2026-11-15). Mis à jour chaque semaine.
 | Les Cavaliers | Saint-Jean-de-Luz | ×1,00 |
 | Côte des Basques | Saint-Jean-de-Luz | ×1,00 |
 | Hendaye | Saint-Jean-de-Luz | ×1,00 |
-| Lacanau Centrale | Cap Ferret | ×0,89 |
-| Carcans-Plage | Cap Ferret | ×0,89 |
-| Montalivet | Cap Ferret | ×0,89 |
-| Vert Bois | Cap Ferret | ×0,89 |
-| La Côte Sauvage | Cap Ferret | ×0,89 |
+| Lacanau Centrale | Cap Ferret | ×0,88 |
+| Carcans-Plage | Cap Ferret | ×0,88 |
+| Montalivet | Cap Ferret | ×0,88 |
+| Vert Bois | Cap Ferret | ×0,88 |
+| La Côte Sauvage | Cap Ferret | ×0,88 |
 | La Sauzaie | Île d’Yeu Nord | ×0,85 |
 | Les Dunes | Île d’Yeu Nord | ×0,85 |
 | Les Conches | Île d’Yeu Nord | ×0,85 |
@@ -45,8 +45,8 @@ Archive : 57 jours (2026-09-20 → 2026-11-15). Mis à jour chaque semaine.
 | La Govelle | SEM-REV (Le Croisic) | ×0,80 |
 | Penthièvre | Belle-Île | ×0,88 |
 | Port Blanc | Belle-Île | ×0,88 |
-| La Torche | Les Pierres Noires | ×0,88 |
-| Pors Carn | Les Pierres Noires | ×0,88 |
+| La Torche | Les Pierres Noires | ×0,86 |
+| Pors Carn | Les Pierres Noires | ×0,86 |
 
 ## Calage d’Open-Meteo, plage par plage
 
@@ -54,29 +54,29 @@ Coefficients hauteur / période. Contrôle sur la seconde moitié de l’archive
 
 | Plage | Pas de 3 h | Coefficients | À ±0,2 m | Écart type |
 |---|---|---|---|---|
-| Hossegor Sud | 456 | 0,76 / 1,14 | 72 % | 0,25 m |
-| La Gravière | 456 | 0,94 / 1,21 | 72 % | 0,45 m |
-| La Piste | 456 | 0,73 / 1,20 | 78 % | 0,29 m |
-| Les Bourdaines | 456 | 1,12 / 1,32 | 71 % | 0,45 m |
-| Le Penon | 456 | 1,10 / 1,32 | 70 % | 0,46 m |
-| Vieux-Boucau | 456 | 1,03 / 1,30 | 59 % | 0,55 m |
-| Moliets | 456 | 1,07 / 1,28 | 67 % | 0,52 m |
-| Les Cavaliers | 456 | 1,02 / 1,27 | 74 % | 0,46 m |
-| Côte des Basques | 456 | 1,20 / 1,25 | 67 % | 0,49 m |
-| Hendaye | 456 | 0,26 / 1,30 | 70 % | 0,21 m |
-| Lacanau Centrale | 456 | 0,98 / 1,26 | 72 % | 0,41 m |
-| Carcans-Plage | 456 | 0,98 / 1,26 | 77 % | 0,43 m |
-| Montalivet | 456 | 1,05 / 1,25 | 73 % | 0,70 m |
-| Vert Bois | 456 | 0,87 / 1,27 | 77 % | 0,52 m |
-| La Côte Sauvage | 456 | 0,98 / 1,23 | 68 % | 0,66 m |
-| La Sauzaie | 456 | 0,88 / 1,24 | 76 % | 0,39 m |
-| Les Dunes | 456 | 0,95 / 1,25 | 76 % | 0,44 m |
-| Les Conches | 456 | 0,87 / 1,28 | 73 % | 0,35 m |
-| La Terrière | 456 | 0,84 / 1,24 | 71 % | 0,39 m |
-| Sion-sur-l’Océan | 456 | 0,73 / 1,25 | 74 % | 0,24 m |
-| Grande Plage | 456 | 0,63 / 1,27 | 75 % | 0,24 m |
-| La Govelle | 456 | 1,06 / 1,27 | 77 % | 0,30 m |
-| Penthièvre | 456 | 0,93 / 1,31 | 67 % | 0,27 m |
-| Port Blanc | 456 | 0,81 / 1,30 | 75 % | 0,28 m |
-| La Torche | 456 | 0,95 / 1,30 | 63 % | 0,61 m |
-| Pors Carn | 456 | 0,81 / 1,29 | 51 % | 0,63 m |
+| Hossegor Sud | 480 | 0,76 / 1,15 | 65 % | 0,30 m |
+| La Gravière | 480 | 0,93 / 1,22 | 65 % | 0,52 m |
+| La Piste | 480 | 0,73 / 1,20 | 73 % | 0,30 m |
+| Les Bourdaines | 480 | 1,11 / 1,32 | 70 % | 0,58 m |
+| Le Penon | 480 | 1,09 / 1,33 | 69 % | 0,52 m |
+| Vieux-Boucau | 480 | 1,02 / 1,31 | 59 % | 0,63 m |
+| Moliets | 480 | 1,06 / 1,30 | 64 % | 0,61 m |
+| Les Cavaliers | 480 | 1,01 / 1,28 | 71 % | 0,41 m |
+| Côte des Basques | 480 | 1,21 / 1,27 | 66 % | 0,39 m |
+| Hendaye | 480 | 0,24 / 1,32 | 72 % | 0,22 m |
+| Lacanau Centrale | 480 | 0,99 / 1,27 | 69 % | 0,51 m |
+| Carcans-Plage | 480 | 0,98 / 1,26 | 74 % | 0,54 m |
+| Montalivet | 480 | 1,04 / 1,26 | 67 % | 0,94 m |
+| Vert Bois | 480 | 0,86 / 1,27 | 69 % | 0,83 m |
+| La Côte Sauvage | 480 | 0,97 / 1,24 | 60 % | 0,84 m |
+| La Sauzaie | 480 | 0,87 / 1,23 | 66 % | 0,71 m |
+| Les Dunes | 480 | 0,94 / 1,25 | 68 % | 0,77 m |
+| Les Conches | 480 | 0,85 / 1,28 | 63 % | 0,63 m |
+| La Terrière | 480 | 0,80 / 1,24 | 62 % | 0,68 m |
+| Sion-sur-l’Océan | 480 | 0,73 / 1,24 | 68 % | 0,37 m |
+| Grande Plage | 480 | 0,63 / 1,26 | 69 % | 0,32 m |
+| La Govelle | 480 | 1,03 / 1,26 | 67 % | 0,53 m |
+| Penthièvre | 480 | 0,90 / 1,30 | 64 % | 0,53 m |
+| Port Blanc | 480 | 0,80 / 1,29 | 68 % | 0,52 m |
+| La Torche | 480 | 0,92 / 1,29 | 57 % | 1,01 m |
+| Pors Carn | 480 | 0,79 / 1,29 | 46 % | 0,96 m |
